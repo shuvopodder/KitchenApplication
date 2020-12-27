@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "898179485577",
+    "project_id": "kitchen-app-f8c89",
+    "storage_bucket": "kitchen-app-f8c89.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898179485577:android:0a52e90dee35ee9f531b58",
+        "android_client_info": {
+          "package_name": "com.example.kitchenapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898179485577-5chn9ft0v2mc8irs2km3f1qmtn956mbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0iUaT9VDMdkh-vyDVhXialW9HPLOR_y8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898179485577-5chn9ft0v2mc8irs2km3f1qmtn956mbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
