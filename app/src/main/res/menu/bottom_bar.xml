@@ -2,22 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/Homme"
+        android:id="@+id/Home"
         android:title="Home"
         android:icon="@drawable/home_48px"/>
     <item
-        android:id="@+id/pf"
+        android:id="@+id/about"
         android:title="About"
         android:icon="@drawable/help_48px"/>
 
 
     <item
         android:id="@+id/st"
-        android:title="Comment"
-        android:icon="@drawable/topic_48px"
+        android:title="Complete"
+        android:icon="@drawable/checkmark_24px"
         />
     <item
-        android:id="@+id/std"
+        android:id="@+id/ct"
+        android:title="Configure"
+        android:icon="@drawable/bluetooth_2_50px"
+        />
+    <item
+        android:id="@+id/share"
         android:title="Share"
         android:icon="@drawable/share_48px"
         />

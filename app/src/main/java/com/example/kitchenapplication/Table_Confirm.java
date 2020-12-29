@@ -2,6 +2,7 @@ package com.example.kitchenapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -38,10 +39,13 @@ public class Table_Confirm extends AppCompatActivity {
 
     ListView ln;
     private Set pairedDevices;
+    DataStore dataStore = new DataStore();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table__confirm);
+
+
 
         t = findViewById(R.id.tt);
         btnn = findViewById(R.id.btmm);
@@ -68,6 +72,9 @@ public class Table_Confirm extends AppCompatActivity {
                 startActivityForResult(turnBTon,1);
             }
         }
+
+
+
         m = findViewById(R.id.mb);
         m.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +92,11 @@ public class Table_Confirm extends AppCompatActivity {
         c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
+                    btSocket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 startActivity(new Intent(Table_Confirm.this,MainActivity.class));
             }
         });
@@ -187,10 +199,42 @@ public class Table_Confirm extends AppCompatActivity {
             // Get the device MAC address, the last 17 chars in the View
             String info = ((TextView) v).getText().toString();
             address = info.substring(info.length() - 17);
+
+            dataStore.setAddress(address);
+
             new ConnectBt().execute();
             ln.setVisibility(View.GONE);
             m.setVisibility(View.GONE);
 
         }
     };
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        /*try {
+            btSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+      
+    }
 }

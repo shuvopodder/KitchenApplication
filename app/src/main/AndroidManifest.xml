@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KitchenApplication">
-        <activity android:name=".Table_Confirm2"></activity>
+        <activity android:name=".Bluetooth_Confiq"></activity>
+        <activity android:name=".Completed_Order" />
+        <activity android:name=".Table_Confirm2" />
         <activity android:name=".test" />
         <activity android:name=".Device_Configuration" />
         <activity android:name=".Table_Confirm" />

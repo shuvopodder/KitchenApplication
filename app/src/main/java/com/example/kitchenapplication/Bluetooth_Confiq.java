@@ -1,6 +1,5 @@
 package com.example.kitchenapplication;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.bluetooth.BluetoothAdapter;
@@ -18,19 +17,17 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class Device_Configuration extends AppCompatActivity {
+public class Bluetooth_Confiq extends AppCompatActivity {
 
-    Button bm2;
-    ListView l;
+    Button bc_b;
+    ListView bc_l;
     BluetoothAdapter myBluetooth = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        bm2 = (Button) findViewById(R.id.rf);
-        l = findViewById(R.id.list);
-
+        setContentView(R.layout.activity_bluetooth__confiq);
+        bc_b  =findViewById(R.id.b_b);
+        bc_l = findViewById(R.id.b_l);
 
         myBluetooth = BluetoothAdapter.getDefaultAdapter();
         if(myBluetooth == null)
@@ -48,25 +45,17 @@ public class Device_Configuration extends AppCompatActivity {
                 startActivityForResult(turnBTon,1);
             }
         }
-
-        /*b.setOnClickListener(new View.OnClickListener() {
+        bc_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pairedDeviceList();
-            }
-        });*/
 
-        bm2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 pairedDeviceList();
             }
         });
-
-
     }
 
     private void pairedDeviceList() {
+
         Set<BluetoothDevice> pairedDevices = myBluetooth.getBondedDevices();
         // pairedDevices = myBluetooth.getBondedDevices();
         ArrayList list = new ArrayList();
@@ -84,8 +73,8 @@ public class Device_Configuration extends AppCompatActivity {
         }
 
         final ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, list);
-        l.setAdapter(adapter);
-        l.setOnItemClickListener(myListClickListener);
+        bc_l.setAdapter(adapter);
+        bc_l.setOnItemClickListener(myListClickListener);
     }
 
     private AdapterView.OnItemClickListener myListClickListener = new AdapterView.OnItemClickListener()
@@ -98,7 +87,7 @@ public class Device_Configuration extends AppCompatActivity {
 
             DataStore d = new DataStore();
             d.setAddress(address);
-            startActivity(new Intent(Device_Configuration.this,MainActivity.class));
+            startActivity(new Intent(Bluetooth_Confiq.this,MainActivity.class));
 
         }
     };

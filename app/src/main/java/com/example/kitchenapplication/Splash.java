@@ -43,7 +43,7 @@ public class Splash extends AppCompatActivity {
                     handler.postDelayed(this,20);
                 }else{
                     //handler.removeCallbacks(this);
-                    startActivity(new Intent(Splash.this,Register.class));
+                    startActivity(new Intent(Splash.this,MainActivity.class));
                 }
             }
         },20);

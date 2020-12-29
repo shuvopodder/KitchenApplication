@@ -39,7 +39,9 @@ public class test extends AppCompatActivity {
         else
         {
             if (myBluetooth.isEnabled())
-            { }
+            {
+
+            }
             else
             {
                 Intent turnBTon = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);

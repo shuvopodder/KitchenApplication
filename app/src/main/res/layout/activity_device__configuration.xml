@@ -8,11 +8,14 @@
     tools:context=".Device_Configuration">
 
     <Button
-        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/rf"
         android:text="Refresh"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false">
+
+    </Button>
+
 
     <ListView
         android:id="@+id/list"
