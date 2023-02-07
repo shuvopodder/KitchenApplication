@@ -44,6 +44,7 @@ public class Splash extends AppCompatActivity {
                 }else{
                     //handler.removeCallbacks(this);
                     startActivity(new Intent(Splash.this,MainActivity.class));
+                    finishAffinity();
                 }
             }
         },20);
